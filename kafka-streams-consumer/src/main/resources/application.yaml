@@ -1,0 +1,23 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: kafka-streams-consumer
+  sleuth:
+    enabled: true
+    traceId128: true
+    sampler:
+      probability: 1.0
+  zipkin:
+    baseUrl: http://localhost:9411
+  cloud:
+    stream:
+      kafka:
+        streams:
+          binder:
+            brokers: localhost:9092
+          bindings:
+            events:
+              consumer:
+                application-id: kafka-streams-consumer
