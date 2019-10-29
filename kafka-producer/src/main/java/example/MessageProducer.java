@@ -17,7 +17,7 @@ public class MessageProducer {
     private final Binding binding;
 
     @Scheduled(fixedDelay = 1000)
-    public void generateApplicationEvent() throws IOException {
+    public void sendMessage() throws IOException {
         String payload = "payload";
         Message<String> message = MessageBuilder.withPayload(payload).build();
 
